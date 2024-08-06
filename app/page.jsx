@@ -14,13 +14,6 @@ export default async function Home() {
 	// console.log(data)
 	return (
 		<>
-			<nav className=' bg-special text-white hover:opacity-15 flex justify-between px-12 py-4 '>
-				<div>Home</div>
-				<div>About</div>
-				<div>Hey</div>
-				<div>Kosomak</div>
-				<div>55555</div>
-			</nav>
 			<Button variant='destructive'>a7a 3ala button</Button>
 		</>
 	)

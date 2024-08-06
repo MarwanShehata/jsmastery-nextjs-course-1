@@ -1,3 +1,4 @@
+import { createId } from '@paralleldrive/cuid2'
 import { drizzle } from 'drizzle-orm/neon-http'
 import {
 	pgTable,
@@ -6,21 +7,31 @@ import {
 	boolean,
 	timestamp,
 	primaryKey,
-	integer
+	integer,
+	pgEnum,
+	unique
 } from 'drizzle-orm/pg-core'
 import { Pool } from 'pg'
 
+// If you changed any thing here, you must run `npm run db:generate` then `npm run db:push`
 
 const pool = new Pool({
 	connectionString: process.env.DATABASE_URL
 })
 
+export const RoleEnum = pgEnum('roles', ['user', 'admin']) // the values would be like a dropdown menu of two roles: user or admin
+
 export const users = pgTable('user', {
-	id: text('id').primaryKey(),
+	id: text('id')
+		.primaryKey()
+		.$defaultFn(() => createId()),
 	name: text('name'),
 	email: text('email').notNull().unique(),
 	emailVerified: timestamp('emailVerified', { mode: 'date' }),
-	image: text('image')
+	image: text('image'),
+	password: text('password'),
+	twoFactorEnabled: boolean('twoFactorEnabled').default(false),
+	role: RoleEnum('roles').default('user')
 })
 
 export const accounts = pgTable(
@@ -43,6 +54,22 @@ export const accounts = pgTable(
 	(account) => ({
 		compoundKey: primaryKey({
 			columns: [account.provider, account.providerAccountId]
+		})
+	})
+)
+export const verificationTokens = pgTable(
+	'emailVerificationToken',
+	{
+		id: text('id')
+			.notNull()
+			.$defaultFn(() => createId()),
+		token: text('token').notNull(),
+		expires: timestamp('expires', { mode: 'date' }).notNull(),
+		email: text('email').notNull()
+	},
+	(verificationToken) => ({
+		compositePk: primaryKey({
+			columns: [verificationToken.id, verificationToken.token]
 		})
 	})
 )
