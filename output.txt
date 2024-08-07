@@ -1,165 +1,101 @@
-Folder PATH listing for volume Media
-Volume serial number is 88A4-7C41
-E:.
-|   .env.local
-|   .eslintrc.json
-|   components.json
-|   drizzle.config.js
-|   jsconfig.json
-|   middleware.js
-|   next.config.mjs
-|   output.txt
-|   package-lock.json
-|   package.json
-|   postcss.config.mjs
-|   README.md
-|   tailwind.config.js
-|   
-|   |   app-build-manifest.json
-|   |   build-manifest.json
-|   |   package.json
-|   |   react-loadable-manifest.json
-|   |   trace
-|   |   
-|   +---cache
-|   |   +---swc
-|   |   |   \---plugins
-|   |   |       \---v7_windows_x86_64_0.106.15
-|   |   \---webpack
-|   |       +---client-development
-|   |       |       0.pack.gz
-|   |       |       index.pack.gz
-|   |       |       
-|   |       \---server-development
-|   |               0.pack.gz
-|   |               1.pack.gz
-|   |               index.pack.gz
-|   |               index.pack.gz.old
-|   |               
-|   +---server
-|   |   |   app-paths-manifest.json
-|   |   |   interception-route-rewrite-manifest.js
-|   |   |   middleware-build-manifest.js
-|   |   |   middleware-manifest.json
-|   |   |   middleware-react-loadable-manifest.js
-|   |   |   next-font-manifest.js
-|   |   |   next-font-manifest.json
-|   |   |   pages-manifest.json
-|   |   |   server-reference-manifest.js
-|   |   |   server-reference-manifest.json
-|   |   |   webpack-runtime.js
-|   |   |   
-|   |   +---app
-|   |   |   +---api
-|   |   |   |   \---auth
-|   |   |   |               route.js
-|   |   |   |               
-|   |   |   \---favicon.ico
-|   |   |           route.js
-|   |   |           
-|   |   \---vendor-chunks
-|   |           @auth.js
-|   |           @neondatabase.js
-|   |           @panva.js
-|   |           cookie.js
-|   |           drizzle-orm.js
-|   |           jose.js
-|   |           next-auth.js
-|   |           next.js
-|   |           oauth4webapi.js
-|   |           preact-render-to-string.js
-|   |           preact.js
-|   |           
-|   +---static
-|   |   +---chunks
-|   |   |       polyfills.js
-|   |   |       
-|   |   \---development
-|   |           _buildManifest.js
-|   |           _ssgManifest.js
-|   |           
-|   \---types
-|       |   package.json
-|       |   
-|       \---app
-|           \---api
-|               \---auth
-|                           route.ts
-|                           
-+---app
-|   |   error.jsx
-|   |   favicon.ico
-|   |   globals.css
-|   |   layout.jsx
-|   |   loading.jsx
-|   |   page.jsx
-|   |   
-|   \---api
-|       \---auth
-|                   route.js
-|                   
-+---components
-|   \---ui
-|           button.jsx
-|           
-+---constants
-|       index.js
-|       
-+---lib
-|       utils.js
-|       
-|           
-+---public
-|       android.svg
-|       apple.svg
-|       boat.png
-|       calendar.svg
-|       camp.svg
-|       close.svg
-|       facebook.svg
-|       feature-bg.png
-|       folded-map.svg
-|       hero-bg.svg
-|       hero.png
-|       hilink-logo.svg
-|       img-1.png
-|       img-2.png
-|       instagram.svg
-|       location.svg
-|       map.svg
-|       menu.svg
-|       meter.svg
-|       next.svg
-|       pattern-bg.png
-|       pattern.png
-|       person-1.png
-|       person-2.png
-|       person-3.png
-|       person-4.png
-|       phone.png
-|       phones.png
-|       play.svg
-|       quote.svg
-|       star.svg
-|       tech.svg
-|       twitter.svg
-|       user.svg
-|       wordpress.svg
-|       youtube.svg
-|       
-\---server
-    |   auth.js
-    |   index.js
-    |   schema.js
-    |   
-    +---actions
-    |       create-posts.js
-    |       get-posts.js
-    |       
-    \---migrations
-        |   0000_busy_earthquake.sql
-        |   
-        \---meta
-                0000_snapshot.json
-                _journal.json
-                
+\.next
+\.vscode
+\app
+\components
+\constants
+\lib
+\node_modules
+\public
+\server
+\types
+\.env.local
+\.eslintrc.json
+\.gitignore
+\components.json
+\drizzle.config.js
+\jsconfig.json
+\middleware.js
+\next.config.mjs
+\output.txt
+\package-lock.json
+\package.json
+\postcss.config.mjs
+\README.md
+\tailwind.config.js
+\app\api
+\app\auth
+\app\error.jsx
+\app\favicon.ico
+\app\globals.css
+\app\layout.jsx
+\app\loading.jsx
+\app\page.jsx
+\app\api\auth
+\app\api\auth\[...nextauth]
+\app\api\auth\[...nextauth]\route.js
+\app\auth\login
+\app\auth\newPassword
+\app\auth\newVerification
+\app\auth\register
+\app\auth\reset
+\app\auth\login\page.jsx
+\app\auth\newPassword\page.jsx
+\app\auth\newVerification\page.jsx
+\app\auth\register\page.jsx
+\app\auth\reset\page.jsx
+\components\auth
+\components\emails
+\components\navigation
+\components\ui
+\components\auth\AuthCard.jsx
+\components\auth\BackButton.jsx
+\components\auth\EmailVerificationForm.jsx
+\components\auth\FormError.jsx
+\components\auth\FormSuccess.jsx
+\components\auth\LoginForm.jsx
+\components\auth\NewPasswordForm.jsx
+\components\auth\RegisterForm.jsx
+\components\auth\ResetForm.jsx
+\components\auth\Socials.jsx
+\components\emails\passwordResetEmailTemplate.jsx
+\components\emails\verificationEmailTemplate.jsx
+\components\navigation\Logo.jsx
+\components\navigation\NavBar.jsx
+\components\navigation\UserButton.jsx
+\components\ui\avatar.jsx
+\components\ui\button.jsx
+\components\ui\card.jsx
+\components\ui\form.jsx
+\components\ui\input-otp.jsx
+\components\ui\input.jsx
+\components\ui\label.jsx
+\constants\index.js
+\lib\baseURL.js
+\lib\utils.js
+\public\github.svg
+\public\google.svg
+\public\logo.svg
+\server\actions
+\server\migrations
+\server\auth.js
+\server\index.js
+\server\schema.js
+\server\actions\emailRegisterAction.js
+\server\actions\emailSigninAction.js
+\server\actions\generateEmailVerificationToken.js
+\server\actions\generatePasswordResetToken.js
+\server\actions\getPasswordResetTokenByEmail.js
+\server\actions\getPasswordResetTokenByToken.js
+\server\actions\newPasswordAction.js
+\server\actions\newVerifications.js
+\server\actions\passwordResetAction.js
+\server\actions\sendPasswordResetEmail.js
+\server\actions\sendVerificationEmail.js
+\server\migrations\meta
+\server\migrations\0000_colossal_clea.sql
+\server\migrations\meta\_journal.json
+\server\migrations\meta\0000_snapshot.json
+\types\loginSchema.js
+\types\newPasswordSchema.js
+\types\registerSchema.js
+\types\resetSchema.js

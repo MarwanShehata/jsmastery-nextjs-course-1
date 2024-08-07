@@ -1,2 +1,0 @@
-ALTER TABLE "emailVerificationToken" DROP CONSTRAINT "emailVerificationToken_id_token_pk";--> statement-breakpoint
-ALTER TABLE "emailVerificationToken" ADD CONSTRAINT "emailVerificationToken_id_token_unique" UNIQUE("id","token");

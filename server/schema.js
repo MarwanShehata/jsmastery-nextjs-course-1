@@ -34,9 +34,7 @@ export const users = pgTable('user', {
 	role: RoleEnum('roles').default('user')
 })
 
-export const accounts = pgTable(
-	'account',
-	{
+export const accounts = pgTable('account',{
 		userId: text('userId')
 			.notNull()
 			.references(() => users.id, { onDelete: 'cascade' }),
@@ -57,8 +55,23 @@ export const accounts = pgTable(
 		})
 	})
 )
-export const verificationTokens = pgTable(
-	'emailVerificationToken',
+export const verificationTokens = pgTable('emailVerificationToken',{
+		id: text('id')
+			.notNull()
+			.$defaultFn(() => createId()),
+		token: text('token').notNull(),
+		expires: timestamp('expires', { mode: 'date' }).notNull(),
+		email: text('email').notNull()
+	},
+	(verificationToken) => ({
+		compositePk: primaryKey({
+			columns: [verificationToken.id, verificationToken.token]
+		})
+	})
+)
+
+export const passwordResetTokens = pgTable(
+	'passwordResetToken',
 	{
 		id: text('id')
 			.notNull()
@@ -74,4 +87,26 @@ export const verificationTokens = pgTable(
 	})
 )
 
-export const db = drizzle(pool)
+
+
+export const twoFactorTokens = pgTable(
+	'twoFactorToken',
+	{
+		id: text('id')
+			.notNull()
+			.$defaultFn(() => createId()),
+		token: text('token').notNull(),
+		expires: timestamp('expires', { mode: 'date' }).notNull(),
+		email: text('email').notNull()
+	},
+	(verificationToken) => ({
+		compositePk: primaryKey({
+			columns: [verificationToken.id, verificationToken.token]
+		})
+	})
+)
+
+
+
+export const db = drizzle(pool) // db http
+0

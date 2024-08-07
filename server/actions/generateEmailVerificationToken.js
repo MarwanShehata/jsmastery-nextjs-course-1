@@ -33,8 +33,7 @@ export const generateEmailVerificationToken = async (email) => {
 			token,
 			expires
 		})
-		.returning()
-	console.log(`verificationToken`)
-	console.log(verificationToken)
+		.returning() 
+		// when you do .returning() the output is usually an array of objects
 	return verificationToken
 }

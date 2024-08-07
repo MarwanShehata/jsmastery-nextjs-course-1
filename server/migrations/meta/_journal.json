@@ -5,50 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1722373006103,
-      "tag": "0000_busy_earthquake",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1722586041363,
-      "tag": "0001_unusual_blur",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1722773600624,
-      "tag": "0002_elite_giant_man",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "7",
-      "when": 1722774192611,
-      "tag": "0003_safe_bushwacker",
-      "breakpoints": true
-    },
-    {
-      "idx": 4,
-      "version": "7",
-      "when": 1722774378995,
-      "tag": "0004_chemical_hellfire_club",
-      "breakpoints": true
-    },
-    {
-      "idx": 5,
-      "version": "7",
-      "when": 1722776247012,
-      "tag": "0005_shallow_doctor_spectrum",
-      "breakpoints": true
-    },
-    {
-      "idx": 6,
-      "version": "7",
-      "when": 1722781929359,
-      "tag": "0006_tan_tarantula",
+      "when": 1723042008618,
+      "tag": "0000_colossal_clea",
       "breakpoints": true
     }
   ]
