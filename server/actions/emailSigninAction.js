@@ -8,6 +8,7 @@ import { users } from '../schema'
 import sendVerificationEmail from './sendVerificationEmail'
 import { signIn } from '@/server/auth'
 import { AuthError } from 'next-auth'
+import { generateEmailVerificationToken } from './generateEmailVerificationToken'
 
 const actionClient = createSafeActionClient()
 
