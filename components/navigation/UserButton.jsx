@@ -11,21 +11,40 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import Image from 'next/image'
 import { LogOut, Moon, Settings, Sun, Truck } from 'lucide-react'
+import { useTheme } from 'next-themes'
+import { useState } from 'react'
 
 const UserButton = ({ user }) => {
-	console.log(user.image)
-	console.log(user.name)
-	console.log(user.email)
-	
+	// console.log(user.image) // If you didn't add the image hostnames in the next.config.mjs file you will get `undefined`
+	// console.log(user.name)
+	// console.log(user.email)
+	const { theme, setTheme } = useTheme()
+	const [check, setCheck] = useState(false)
+	const handleThemeSwitch = () => {
+		switch (theme) {
+			case 'dark':
+				return setCheck(true)
+				break
+			case 'light':
+				return setCheck(false)
+				break
+			case 'system':
+				return setCheck(false)
+				break
+			default:
+				return setCheck(false)
+				break
+		}
+	}
 
 	if (user) {
 		return (
 			<>
-				<DropdownMenu modal={false} >
+				<DropdownMenu modal={false}>
 					<DropdownMenuTrigger>
 						<Avatar className='w-7 h-7'>
 							{user.image && (
-								<AvatarImage src={user.image} alt={user.name} fill={true} />
+								<AvatarImage src={user.image} alt={user.name} fill='true' />
 							)}
 							{!user.image && (
 								<AvatarFallback className='bg-primary/25'>
@@ -69,9 +88,17 @@ const UserButton = ({ user }) => {
 							Settings
 						</DropdownMenuItem>
 						<DropdownMenuItem className='py-2 font-medium cursor-pointer transition-all duration-200 hover:bg-primary/10'>
-							<div className='flex items-center'>
-								<Sun size={14} />
-								<Moon size={14} />
+							<div className='relative flex mr-3'>
+								<div className='group flex items-center'>
+									<Sun
+										size={14}
+										className='group-hover:text-yellow-600  absolute group-hover:rotate-180  dark:scale-0 dark:-rotate-90 transition-all duration-750 ease-in-out'
+									/>
+									<Moon
+										size={14}
+										className='group-hover:text-blue-400  scale-0 rotate-90 dark:rotate-0  dark:scale-100 transition-all ease-in-out duration-750'
+									/>
+								</div>
 								<p>
 									Theme<span>theme</span>
 								</p>

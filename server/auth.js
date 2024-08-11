@@ -11,6 +11,7 @@ import bcrypt from 'bcrypt'
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
 	adapter: DrizzleAdapter(db),
+	trustHost: true, // Allow NextAuth to trust the host Mesh 3aref dh sa7 walla 8alat
 	secret: process.env.AUTH_SECRET,
 	session: {
 		strategy: 'jwt'
